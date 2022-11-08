@@ -3,8 +3,9 @@
 #
 # class LoginPage(BasePage):
 #     login_field_xpath = "//*[@id='login']"
-#     password_field_xpath =
-#     sign_in_button_xpath =
-#
+#     password_field_xpath ="//*[@id='user_password']"
+#     sign_in_button_xpath ="//*[id='signinButton']"
+#     email = 'pashadenysyuk0@gmail.com'
+
 #     def type_in_email(self, email):
 #         self.field_send_keys(self.login_field_xpath, email)
