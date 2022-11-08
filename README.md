@@ -6,3 +6,10 @@
 
 __Kind regards, Pavlo D__
 😺
+
+
+## TASK 2: selectors
+
+//span[text()='## TASK 2: selectors']
+//span[@role='presentation']
+///pre[contains(@class,'CodeMirror-line')]
