@@ -2,7 +2,7 @@ from pages.base_page import BasePage
 
 
 class MatchForm(BasePage):
-    email_field_xpath = "//*[@id='_next']/div[1]/main/div[2]/form/div[2]/div/div[1]/div/div/input"
+    email_field_xpath = "//*[@id='__next']/div[1]/main/div[2]/form/div[2]/div/div[1]/div/div/input"
     name_field_xpath = "/html/body/div/div[1]/main/div[2]/form/div[2]/div/div[2]/div/div/input"
     surname_field_xpath = "//input[contains(@name,'surname')]"
     age_field_xpath = "//input[contains(@name,'age')]"
