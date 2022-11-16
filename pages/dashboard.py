@@ -2,15 +2,14 @@ from pages.base_page import BasePage
 
 
 class Dashboard(BasePage):
-    login_field_xpath = "/html/body/div/form/div/div[1]/div[1]/div/input;user01@getnada.com"
-    password_field_xpath="/html/body/div/form/div/div[1]/div[2]/div/input;Test-1234"
-    button_xpath="//*[@id='_next']/div[1]/main/div[3]/div[1]/div/div[3]/a/span[1]"
-    main_page_xpath="//html/body/div/div[1]/div/div/div/ul[1]/div[1]/div[2]/span"
-    add_player_xpath="//*[@id='_next']/div[1]/main/div[3]/div[2]/div/div/a/button/span[1]"
-    activity_xpath="//*[@id='_next']/div[1]/main/div[3]/div[3]/div/div/h2"
-    players_xpath="/html/body/div/div[1]/div/div/div/ul[1]/div[2]/div[2]/span"
-    language_xpath="//*[@id='_next']/div[1]/div/div/div/ul[2]/div[1]/div[2]/span"
-    signout_button_xpath="//*[@id='_next']/div[1]/div/div/div/ul[2]/div[2]/div[2]/span"
-    scouts_panel_xpath="/html/body/div/div[1]/header/div/h6"
-    playerscount_xpath="//div[text()='Players count']"
-    pass
+    password_xpath = "//*[@id='password']"
+    password_xpath = "//*[@type='password']"
+    password_xpath = "//*[@name='password']"
+    login_xpath = "//*[@type='text']"
+    login_xpath = "//*[@id='login']"
+    login_xpath = "//*[@name='login']"
+    remind_password_xpath = "//*[text()='Remind password']"
+    language_selector_xpath = "//*[@id='__next']/form/div/div[2]/div/div"
+    scouts_panel_xpath = "// *[text() = 'Scouts Panel']"
+    sign_in_button = "// *[text() = 'Sign in']"
+    sign_in_button = "/ html / body / div / form / div / div[2] / button / span[1]"

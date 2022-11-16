@@ -21,6 +21,7 @@ class Test(unittest.TestCase):
     def test_print_nice_words(self):
         print("WELL DONE!!!!!!!!!")
 
+
 class TestMediumPage(unittest.TestCase):
 
     @classmethod
@@ -37,6 +38,7 @@ class TestMediumPage(unittest.TestCase):
         assert actual_title == expected_title
 
     def get_page_title(self, url):
+        self.driver.get(url)
         return self.driver.title
 
     @classmethod
