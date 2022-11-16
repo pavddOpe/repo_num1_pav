@@ -2,7 +2,7 @@ from pages.base_page import BasePage
 
 
 class LoginPage(BasePage):
-    login_field_xpath = "//*[@id='login']"
+    login_page_xpath = "//*[@id='login']"
     password_field_xpath = "//*[@id='password']"
     sign_in_button_xpath = "//*[id='Sign in']"
     login_url = ('https://scouts-test.futbolkolektyw.pl/en')
@@ -24,3 +24,6 @@ class LoginPage(BasePage):
 
     def check_title_of_header(self):
         self.assert_element_text(self.driver, self.title_of_box_xpath, self.header_of_box)
+
+    def assert_element_text(self, driver, title_of_box_xpath, header_of_box):
+        pass

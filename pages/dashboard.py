@@ -1,3 +1,5 @@
+import time
+
 from pages.base_page import BasePage
 
 
@@ -13,3 +15,7 @@ class Dashboard(BasePage):
     scouts_panel_xpath = "// *[text() = 'Scouts Panel']"
     sign_in_button_xpath = "// *[text() = 'Sign in']"
     sign_in_button_xpath = "//span[1]"
+
+    def title_of_page(self):
+        time.sleep(5)
+        assert self.get_page_title(self.login_url) == self.expected_title
