@@ -1,4 +1,9 @@
+import os
+
+from selenium.webdriver.chrome import webdriver
+
 from pages.base_page import BasePage
+from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
 class AddAPlayer(BasePage):

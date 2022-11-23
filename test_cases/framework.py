@@ -21,7 +21,6 @@ class Test(unittest.TestCase):
     def test_print_nice_words(self):
         print("WELL DONE!!!!!!!!!")
 
-
 class TestMediumPage(unittest.TestCase):
 
     @classmethod

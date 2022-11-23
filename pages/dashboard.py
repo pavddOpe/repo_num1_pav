@@ -4,6 +4,8 @@ from pages.base_page import BasePage
 
 
 class Dashboard(BasePage):
+    expected_title = "Scouts panel"
+    dashboard_url = 'https://scouts-test.futbolkolektyw.pl/en'
     password_xpath = "//*[@id='password']"
     password_xpath = "//*[@type='password']"
     password_xpath = "//*[@name='password']"
@@ -18,4 +20,4 @@ class Dashboard(BasePage):
 
     def title_of_page(self):
         time.sleep(5)
-        assert self.get_page_title(self.login_url) == self.expected_title
+        assert self.get_page_title(self.dashboard_url) == self.expected_title

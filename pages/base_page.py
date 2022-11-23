@@ -14,5 +14,4 @@ class BasePage():
         return self.driver.find_element(selector_type, selector).click()
 
     def get_page_title(self, url):
-        self.driver.get(url)
         return self.driver.title
