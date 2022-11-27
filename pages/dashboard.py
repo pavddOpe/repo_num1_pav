@@ -4,19 +4,16 @@ from pages.base_page import BasePage
 
 
 class Dashboard(BasePage):
+    futbol_kolektyw_logo_xpath = '//*[@title="Logo Scouts Panel"]'
+    add_player_button_xpath = "//[text()='Add player']"
     expected_title = "Scouts panel"
     dashboard_url = 'https://scouts-test.futbolkolektyw.pl/en'
     password_xpath = "//*[@id='password']"
-    password_xpath = "//*[@type='password']"
-    password_xpath = "//*[@name='password']"
     login_xpath = "//*[@type='text']"
-    login_xpath = "//*[@id='login']"
-    login_xpath = "//*[@name='login']"
     remind_password_xpath = "//*[text()='Remind password']"
     language_selector_xpath = "//div[2]/div/div"
-    scouts_panel_xpath = "// *[text() = 'Scouts Panel']"
-    sign_in_button_xpath = "// *[text() = 'Sign in']"
-    sign_in_button_xpath = "//span[1]"
+    scouts_panel_xpath = "//*[text()='Scouts Panel']"
+    sign_in_button_xpath = "//button[@type='submit']"
 
     def title_of_page(self):
         time.sleep(5)
