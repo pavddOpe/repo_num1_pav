@@ -1,0 +1,44 @@
+import os
+import time
+import unittest
+
+from selenium import webdriver
+
+from pages.add_player_page import AddPlayer
+from pages.dashboard import Dashboard
+from pages.login_page import LoginPage
+from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
+
+
+class TestDashboardPage(unittest.TestCase):
+
+    @classmethod
+    def setUp(self):
+        os.chmod(DRIVER_PATH, 755)
+        self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
+        self.driver.get('https://scouts.futbolkolektyw.pl/en/') #open the website
+        self.driver.fullscreen_window() #open a browser in full size mode
+        self.driver.implicitly_wait(IMPLICITLY_WAIT) #wait before you start testing
+        self.name = "Cristianito"
+        self.surname = "Ronaldito"
+        self.full_name = self.name+" "+self.surname
+
+    def test_add_player_on_dashboard(self):
+        user_login = LoginPage(self.driver)
+        user_login.do_login('user07@getnada.com', 'Test-1234') #login to the system
+        dashboard_page = Dashboard(self.driver)
+        dashboard_page.wait_for_add_player_will_be_visible() #wait for the link to be visible
+        dashboard_page.click_on_add_player() #click on add player link
+        add_player = AddPlayer(self.driver)
+        add_player.type_to_name(self.name) #enter name of the player
+        add_player.type_to_surname(self.surname) #enter surname of the player
+        add_player.select_age("11/15/1988") #enter age of the player
+        add_player.select_leg("right") #select left leg of the player (you can change leg: all else value will be marked as right)
+        add_player.type_to_main_position("striker") #select position of the player
+        add_player.click_on_the_submit_button() #click on submit button
+        add_player.verify_player_in_menu_to_be_appeared(self.full_name) #verify that name of the player appears in left menu
+        time.sleep(3)
+
+    @classmethod
+    def tearDown(self):
+        self.driver.quit() #close the browser after the test
